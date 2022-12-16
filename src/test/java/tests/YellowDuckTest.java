@@ -1,8 +1,13 @@
 package tests;
+import config.Config;
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import pages.MainPage;
 import pages.SearchPage;
+
+import static config.Config.SEARCH_STRING;
+
 
 /**
  * Класс, который реализует тест для YellowDuck:
@@ -14,14 +19,11 @@ import pages.SearchPage;
  */
 
 public class YellowDuckTest extends BaseTest{
-
-    private final static String URL = "https://demo.litecart.net/"; // константа с ссылкой на сайт
-    private final static String SEARCH_STRING = "Yellow Duck"; // константа с ссылкой на сайт
-
     @Test
+    @Step("Assertions href value = value from site after search")
     public void checkHref() {
 
-        MainPage mainPage = new MainPage(URL); // создаем экземпляр класса MainPage чтобы открыть браузер
+        MainPage mainPage = new MainPage(Config.URL); // создаем экземпляр класса MainPage чтобы открыть браузер
         mainPage.search(SEARCH_STRING);
         mainPage.EnterSearchField();
         SearchPage searchPage = new SearchPage();

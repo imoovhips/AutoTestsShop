@@ -1,4 +1,5 @@
 package pages;
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.Keys;
@@ -12,7 +13,9 @@ public class MainPage {
     // здесь устанавливаем переменные с локаторами, которые нам нужны
     private final SelenideElement searchFiled = $x("//*[@class=\"form-control\"][@type=\"search\"]");
     private final SelenideElement searchButton = $x("//*[@class=\"form-control\"][@type=\"search\"]");
+    private final SelenideElement cardButton = $x("//*[@id=\"cart\"]");
 
+    
     /**
      * Создали конструктор, через который мы будем открывать браузер
      * То есть при инициализации мы передаем какой-то аргумент (ссылку)
@@ -33,4 +36,8 @@ public class MainPage {
     public void EnterSearchField() {
         searchFiled.sendKeys(("") + Keys.ENTER);
     }
+    public void enterToCart() {
+        cardButton.click();
+    }
+
 }
