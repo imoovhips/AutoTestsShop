@@ -1,6 +1,5 @@
 package tests;
 
-import com.codeborne.selenide.commands.ShouldHave;
 import config.Config;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
