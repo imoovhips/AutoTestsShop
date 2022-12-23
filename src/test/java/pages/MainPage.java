@@ -34,10 +34,11 @@ public class MainPage {
      * Метод для выполнения поиска на сайте среди элементов и нажимается кнопка Enter
      */
     public void EnterSearchField() {
-        searchFiled.sendKeys(("") + Keys.ENTER);
+        searchFiled.sendKeys(Keys.ENTER);
     }
     public void enterToCart() {
         cardButton.click();
     }
+
 
 }

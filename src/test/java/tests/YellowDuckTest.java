@@ -6,7 +6,8 @@ import org.junit.jupiter.api.Test;
 import pages.MainPage;
 import pages.SearchPage;
 
-import static config.Config.SEARCH_STRING;
+
+import static config.Config.SEARCH_YELLOW_DUCK;
 
 
 /**
@@ -20,11 +21,11 @@ import static config.Config.SEARCH_STRING;
 
 public class YellowDuckTest extends BaseTest{
     @Test
-    @Step("Assertions href value = value from site after search")
+
     public void checkHref() {
 
         MainPage mainPage = new MainPage(Config.URL); // создаем экземпляр класса MainPage чтобы открыть браузер
-        mainPage.search(SEARCH_STRING);
+        mainPage.search(SEARCH_YELLOW_DUCK);
         mainPage.EnterSearchField();
         SearchPage searchPage = new SearchPage();
         String href = searchPage.getHrefFromFirst(); // записали ссылку на получение href в переменную

@@ -12,16 +12,7 @@ public class ShoppingCartPage{
 
 
     private final SelenideElement emptyCartTitles = $x("//*[@id=\"box-checkout\"]");
-
-    //*[@id="box-checkout"]
-    //*[@class="btn btn-success btn-lg"]
-
-    /**
-     * Что мы будем делать на этой странице?
-     * 1. Зайти в корзину
-     * 2. Проверить, что она открылась и отображается текст "There are no items in your cart. Back"
-     */
-
+    private final ElementsCollection cardListing = $$x("//a[@class=\"link\"]");
 
 
     public String getToText() {
@@ -29,4 +20,9 @@ public class ShoppingCartPage{
                 "Back"));
         return emptyCartTitles.text();
     }
+    public String getHrefFromFirst() {
+        return cardListing.first().getAttribute("href");
+
+    }
+
 }
