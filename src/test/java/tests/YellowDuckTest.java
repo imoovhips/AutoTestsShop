@@ -1,5 +1,6 @@
 package tests;
 import config.Config;
+import io.qameta.allure.Description;
 import io.qameta.allure.Step;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -10,18 +11,15 @@ import pages.SearchPage;
 import static config.Config.SEARCH_YELLOW_DUCK;
 
 
-/**
- * Класс, который реализует тест для YellowDuck:
- * Шаги:
- * 1. Открыть сайт
- * 2. Нажать на кнопку поиска и ввести текст "Yellow Duck"
- * 3. В найденных элементах получить href атрибут первого найденного элемента
- * 4. Убедиться, что href ссылка содержит слово "Yellow duck"
- */
-
 public class YellowDuckTest extends BaseTest{
-    @Test
 
+    /** Тест:
+     * 1. Ищем в поиске на главной странице продукт "Yellow duck"
+     * 2. Проверяем, что в href найденного продукта отображается нужное название "Yellow duck"
+     * (таким образом проверяем, что нашли верный продукт)
+     */
+    @Test
+    @Description("Yellow-duck test")
     public void checkHref() {
 
         MainPage mainPage = new MainPage(Config.URL); // создаем экземпляр класса MainPage чтобы открыть браузер

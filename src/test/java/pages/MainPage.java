@@ -1,8 +1,11 @@
 package pages;
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.Keys;
+
+import static com.codeborne.selenide.Selenide.$$x;
 import static com.codeborne.selenide.Selenide.$x;
 
 /**
@@ -14,8 +17,10 @@ public class MainPage {
     private final SelenideElement searchFiled = $x("//*[@class=\"form-control\"][@type=\"search\"]");
     private final SelenideElement searchButton = $x("//*[@class=\"form-control\"][@type=\"search\"]");
     private final SelenideElement cardButton = $x("//*[@id=\"cart\"]");
+    private final ElementsCollection loginButton = $$x("//*[@id=\"site-menu\"]/div/div/div[1]/a[3]/small");
 
-    
+
+
     /**
      * Создали конструктор, через который мы будем открывать браузер
      * То есть при инициализации мы передаем какой-то аргумент (ссылку)
@@ -40,5 +45,7 @@ public class MainPage {
         cardButton.click();
     }
 
-
+    public void goToLogin() {
+        loginButton.first().click();
+    }
 }

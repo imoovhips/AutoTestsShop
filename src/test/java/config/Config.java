@@ -9,5 +9,8 @@ public class Config {
 
     public final static String SEARCH_GREEN_DUCK = "Green Duck";
 
+    public final static String EMAIL = "antipenkomv@bk.ru";
+    public final static String PASS = "3323115Q";
+
 
 }
